@@ -3,14 +3,16 @@ public class Ball {
   PVector ballVector;
   PVector addGravityVector;
   PVector velocity = new PVector(0, 0);
-  ;
   float gravity = 1.01;
   boolean mouseInCircle = false;
+  
+//Constructor for Ball
   Ball(int x, int y, MainWindow _MW) {
     MW = _MW;
-    ballVector = new PVector(x, y, 0);
-    ellipse(ballVector.x, ballVector.y, 50, 50);
+    ballVector = new PVector(x, y);
   }
+
+//Add gravity force to Ball
   public void Gravity() {
     PVector colDetect = MW.checkCollisions(this);
     if (colDetect == null) {
@@ -27,6 +29,10 @@ public class Ball {
     addGravityVector = new PVector(0, velocity.y);
     ballVector.add(addGravityVector);
   }
+  
+  
+  
+// Mouse related actions
   public void mouseWasPressed()
   {
     float d = dist(ballVector.x, ballVector.y, mouseX, mouseY); 
@@ -37,13 +43,11 @@ public class Ball {
     }
   }
   public void mouseWasReleased()
- {
-  mouseInCircle = false;
-}
+  {
+    mouseInCircle = false;
+  }
 
-
-
-
+//drawing the Ball
   public void Draw() {
     ellipse(ballVector.x, ballVector.y, 50, 50);
   }
