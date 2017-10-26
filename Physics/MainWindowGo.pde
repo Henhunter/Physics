@@ -1,4 +1,4 @@
-public class MainWindow { //<>//
+public class MainWindow {
   WallsFloorCeiling floor;
   ArrayList<Ball> ballList;
   int numberOfBalls=5;
@@ -23,10 +23,10 @@ public class MainWindow { //<>//
       Ball theBall = ballList.get(i);
       if (theBall.mouseInCircle== true)
       {
-        theBall.ballVector.x = mouseX;
-        theBall.ballVector.y = mouseY;
+        theBall.itemVector.x = mouseX;
+        theBall.itemVector.y = mouseY;
       }
-      theBall.Gravity();
+      theBall.addGravity();
       theBall.Draw();
     }
   }
@@ -36,12 +36,12 @@ public class MainWindow { //<>//
     for (int i=0; i<ballList.size(); i++) {
       if (theBall != ballList.get(i))
       {
-        if (theBall.ballVector.dist(ballList.get(i).ballVector)<50)
+        if (theBall.itemVector.dist(ballList.get(i).itemVector)<50)
         {
           print("Hit");
         }
       }
-      if (theBall.ballVector.y < floor.posY)
+      if (theBall.itemVector.y < floor.posY)
         continue;
       return floor.bouncy;
     }
