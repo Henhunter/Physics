@@ -2,9 +2,6 @@
 
 public class Ball extends Item{
   MainWindow MW;
-  PVector addGravityVector;
-  PVector velocity;
-  float gravity;
   boolean mouseInCircle = false;
   
 //Constructor for Ball
@@ -34,7 +31,7 @@ public class Ball extends Item{
     //check for collisions
     PVector colDetect = MW.checkCollisions(this);
     if (colDetect != null) {
-      velocity.y=-velocity.y/colDetect.y;
+      velocity.y=-velocity.y/colDetect.y; //<>//
     }
   }
 }
