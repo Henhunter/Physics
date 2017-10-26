@@ -11,21 +11,10 @@ void draw() {
   MW.MainWindowGo();
 }
 
+
 public void mousePressed() {
-  float d = dist(MW.ball.ballVector.x, MW.ball.ballVector.y, mouseX, mouseY);
-  if (d<50) {
-    MW.ball.mouseInCircle = true;
-  } else {
-    MW.ball.mouseInCircle = false;
-  }
-}
-public void mouseMoved() {
-  if (MW.ball.mouseInCircle == true)
-  { //<>//
-    MW.ball.ballVector.x = mouseX;
-    MW.ball.ballVector.y = mouseY;
-  }
+ MW.mouseWasPressed(); 
 }
 public void mouseReleased() {
-  MW.ball.mouseInCircle = false;
+  MW.mouseWasReleased();
 }
