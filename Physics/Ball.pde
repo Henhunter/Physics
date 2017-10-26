@@ -8,7 +8,7 @@ public class Ball {
   boolean mouseInCircle = false;
   Ball(int x, int y, MainWindow _MW) {
     MW = _MW;
-    ballVector = new PVector(x, y);
+    ballVector = new PVector(x, y, 0);
     ellipse(ballVector.x, ballVector.y, 50, 50);
   }
   public void Gravity() {
@@ -29,7 +29,7 @@ public class Ball {
   }
   public void mouseWasPressed()
   {
-    float d = dist(ballVector.x, ballVector.y, mouseX, mouseY);  //<>//
+    float d = dist(ballVector.x, ballVector.y, mouseX, mouseY); 
     if (d<50) {
       mouseInCircle = true;
     } else {

@@ -39,9 +39,21 @@ public class MainWindow {
 
     
   }
-  public PVector checkCollisions(Ball ballx) {
-    if (ballx.ballVector.y < floor.posY)
-      return null;
-    return floor.bouncy;
+  public PVector checkCollisions(Ball theBall) {
+    for(int i=0; i<ballList.size(); i++){
+      if(theBall != ballList.get(i))
+      {
+      if(theBall.ballVector.dist(ballList.get(i).ballVector)<50)
+      {
+       print("Hit");  //<>//
+      }
+      }
+      if (theBall.ballVector.y < floor.posY)
+        return null;
+      return floor.bouncy;        
+      
+    }
+    return null;
   }
+  
 }
