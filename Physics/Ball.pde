@@ -31,15 +31,7 @@ public class Ball {
      addGravityVector = new PVector(0,velocity.y);
      ballVector.add(addGravityVector);
   }
-  public void mousePressed(){
-    float d = dist(ballVector.x,ballVector.y,mouseX,mouseY);
-    if(d<10){
-    mouseInCircle = true;
-    }
-    else{
-    mouseInCircle = false;
-    }
-  }
+  
    public void mouseReleased(){
      mouseInCircle = false;
   }
@@ -57,3 +49,12 @@ public class Ball {
     
   }  
 }
+public void mousePressed(){
+    float d = dist(MW.ball.ballVector.x,MW.ball.ballVector.y,mouseX,mouseY);
+    if(d<10){
+    MW.ball.mouseInCircle = true;
+    }
+    else{
+    MW.ball.mouseInCircle = false;
+    }
+  }
