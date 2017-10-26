@@ -8,7 +8,7 @@ public class Ball {
   Ball(int x, int y, MainWindow _MW) {
     MW = _MW;
     ballVector = new PVector(x,y);
-    ellipse(ballVector.x,ballVector.y,10,10);
+    ellipse(ballVector.x,ballVector.y,50,50);
      
   }
   public void Gravity(){
@@ -32,29 +32,11 @@ public class Ball {
      ballVector.add(addGravityVector);
   }
   
-   public void mouseReleased(){
-     mouseInCircle = false;
-  }
   
-  public void mouseMove(){
-  if (mouseInCircle == true)
-  {
-    ballVector.x = mouseX;
-    ballVector.y = mouseY;
-  }
-  }
+  
   
   public void Draw(){
-    ellipse(ballVector.x,ballVector.y,10,10);
+    ellipse(ballVector.x,ballVector.y,50,50);
     
   }  
 }
-public void mousePressed(){
-    float d = dist(MW.ball.ballVector.x,MW.ball.ballVector.y,mouseX,mouseY);
-    if(d<10){
-    MW.ball.mouseInCircle = true;
-    }
-    else{
-    MW.ball.mouseInCircle = false;
-    }
-  }

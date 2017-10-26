@@ -10,6 +10,11 @@ MainWindow(){
     
   }
  void MainWindowGo(){
+ if(ball.mouseInCircle== true)
+   {
+    ball.ballVector.x = mouseX;
+    ball.ballVector.y = mouseY;
+  }
  ball.Gravity();
  ball2.Gravity();
  background(255);
