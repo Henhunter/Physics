@@ -1,5 +1,4 @@
-  
-  
+
 public MainWindow MW;
 
 void setup()
